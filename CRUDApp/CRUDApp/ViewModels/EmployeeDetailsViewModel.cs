@@ -47,6 +47,7 @@ namespace CRUDApp.ViewModels
             }
         }
 
+        //Load in the employee that is Selected
         private async void LoadEmployee(string employeeId)
         {
             try
@@ -59,9 +60,9 @@ namespace CRUDApp.ViewModels
                     Description = employee.Description;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(e.Message);
             }
         }
 

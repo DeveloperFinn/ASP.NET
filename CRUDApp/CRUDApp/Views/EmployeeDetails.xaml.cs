@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRUDApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace CRUDApp.Views
         public EmployeeDetails()
         {
             InitializeComponent();
+
+            BindingContext = StartUp.Resolve<EmployeeDetailsViewModel>();
         }
     }
 }

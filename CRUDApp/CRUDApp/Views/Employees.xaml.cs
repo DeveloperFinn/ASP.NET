@@ -18,7 +18,7 @@ namespace CRUDApp.Views
         public Employees()
         {
             InitializeComponent();
-            _employeeViewModel = Startup.Resolve<EmployeesViewModel>();
+            _employeeViewModel = StartUp.Resolve<EmployeesViewModel>();
             BindingContext = _employeeViewModel;
         }
 

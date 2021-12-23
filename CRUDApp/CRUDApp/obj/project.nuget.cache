@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "apOQczLNBTdOyrVvNr7DsEeYZg4MD/bdgcPsgzpAUO1YD6eL1uKdXWukQ/OE1lcYT6FYgJd9RxV+/4bJKhdwVg==",
+  "dgSpecHash": "t6lHfiJ1TY5Cp+MB+TOuvh1c+Q9nUwBcRwMprHxp+SfsI4GH9523JFtUv+EfikD3FdgRdkdpXsWN+XaZmq64XA==",
   "success": true,
   "projectFilePath": "C:\\Users\\32484\\source\\repos\\CRUDApp\\CRUDApp\\CRUDApp\\CRUDApp.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,10 @@
     "C:\\Users\\32484\\.nuget\\packages\\system.text.json\\6.0.1\\system.text.json.6.0.1.nupkg.sha512",
     "C:\\Users\\32484\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\32484\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\32484\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
+    "C:\\Users\\32484\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

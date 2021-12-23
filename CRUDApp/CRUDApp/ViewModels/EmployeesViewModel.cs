@@ -19,14 +19,11 @@ namespace CRUDApp.ViewModels
         private Employee selectedEmployee;
         private readonly IEmployeeService _employeeService;
 
-        //Constructors
-        public EmployeesViewModel()
-        {
-
-        }
+        //Constructor
         public EmployeesViewModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
+            //This collection gets loaded into the EmployeesPage
             Employees = new ObservableCollection<Employee>();
             DeleteEmployeeCommand = new Command<Employee>(async e => await DeleteEmployee(e));
             AddNewEmployeeCommand = new Command(async () => await GoToAddEmployeeView());
@@ -37,21 +34,24 @@ namespace CRUDApp.ViewModels
         {
             await _employeeService.DeleteEmployee(e);
             await App.DbHelper.DeleteEmployeeAsync(e);
+            //Refresh the page
             PopulateEmployees();
         }
 
 
+        //Rerouting
         private async Task GoToAddEmployeeView()
     => await Shell.Current.GoToAsync(nameof(AddEmployee));
 
 
+        //Refreshing
         public async void PopulateEmployees()
         {
             try
             {
                 Employees.Clear();
 
-                var books = await _employeeService.GetEmployees();
+                var employees = await _employeeService.GetEmployees();
                 foreach (var employee in employees)
                 {
                     Employees.Add(employee);
@@ -63,7 +63,8 @@ namespace CRUDApp.ViewModels
             }
         }
 
-        async void OnBookSelected(Employee employee)
+        //When employee is selected, go to the employeeDetailsPage where Id's match
+        async void OnEmployeeSelected(Employee employee)
         {
             if (employee == null)
                 return;
@@ -81,7 +82,7 @@ namespace CRUDApp.ViewModels
             }
         }
 
-        public Employee SelectedBook
+        public Employee SelectedEmployee
         {
             get => selectedEmployee;
             set
@@ -90,7 +91,7 @@ namespace CRUDApp.ViewModels
                 {
                     selectedEmployee = value;
 
-                    OnBookSelected(SelectedBook);
+                    OnEmployeeSelected(SelectedEmployee);
                 }
             }
         }

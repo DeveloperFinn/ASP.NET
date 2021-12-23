@@ -22,6 +22,8 @@ namespace CRUDApp.ViewModels
             SaveEmployeeCommand = new Command(async ()=> await SaveEmployee());
         }
 
+
+        //Saving the employee
         private async Task SaveEmployee()
         {
             try
@@ -32,7 +34,7 @@ namespace CRUDApp.ViewModels
                     Title = Title,
                     Description = Description
                 };
-                await _employeeService.AddEmployee(employee);
+                await _employeeService.SaveEmployee(employee);
                 await App.DbHelper.SaveEmployeeAsync(employee);
                 await Shell.Current.GoToAsync("..");
             }
@@ -72,7 +74,7 @@ namespace CRUDApp.ViewModels
         }
 
 
-
+         
         public ICommand SaveEmployeeCommand { get; }
     }
 }

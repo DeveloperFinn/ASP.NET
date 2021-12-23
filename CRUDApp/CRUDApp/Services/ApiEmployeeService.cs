@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace CRUDApp.Services
 {
+    //Api implements the Interface Service
     public class ApiEmployeeService : IEmployeeService
     {
         private readonly HttpClient _httpClient;
+        //We need to make a request to the web API
+        //We make us of the HttpClient Class
         public ApiEmployeeService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -18,6 +21,7 @@ namespace CRUDApp.Services
         public async Task AddEmployee(Employee employee)
         {
             var response = await _httpClient.PostAsync("Books",
+                //Payload of the request
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json"));
 
             response.EnsureSuccessStatusCode();
@@ -51,9 +55,12 @@ namespace CRUDApp.Services
         public async Task SaveEmployee(Employee employee)
         {
             var response = await _httpClient.PutAsync($"Books?id={employee.Id}",
+                           //Payload of the request
                            new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json"));
 
             response.EnsureSuccessStatusCode();
         }
+
+
     }
 }
